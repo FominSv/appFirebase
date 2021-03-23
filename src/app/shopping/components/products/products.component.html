@@ -1,0 +1,17 @@
+ <div class="row">
+      <div class="col-lg-3 col-md-12"> 
+        <app-product-filter [category]="category"></app-product-filter>
+     </div>
+   <div class="col-lg-9 col-md-12" > 
+        <div class="row"   *ngIf="cart$ | async as cart">
+            <ng-container *ngFor="let p of filteredProducts">
+                <div class="col"> 
+                   <app-product-cart [product]="p" [shopping-cart]="cart"></app-product-cart>
+                </div>
+             
+           </ng-container>
+      </div>
+  </div> 
+</div> 
+
+
